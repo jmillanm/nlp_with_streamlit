@@ -1,14 +1,13 @@
 import streamlit as st
 import spacy
+import en_core_web_sm
 from textblob import TextBlob
 from gensim.summarization import summarize
 # Sumy Summary Pkg
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
-import nltk
 
-nltk.download('punkt')
 
 
 # Function for Sumy Summarization
@@ -23,7 +22,7 @@ def sumy_summarizer(docx):
 
 
 def entity_analyzer(my_text):
-    nlp = spacy.load('en')
+    nlp = en_core_web_sm.load()
     docx = nlp(my_text)
 
     tokens = [token.text for token in docx]
@@ -33,7 +32,7 @@ def entity_analyzer(my_text):
 
 
 def text_analyzer(my_text):
-    nlp = spacy.load('en')
+    nlp = en_core_web_sm.load()
     docx = nlp(my_text)
 
     tokens = [token.text for token in docx]
