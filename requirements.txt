@@ -1,5 +1,5 @@
 streamlit
 spacy
 textblob
-gensi
+gensim
 sumy
